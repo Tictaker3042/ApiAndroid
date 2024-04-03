@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
                     return@withContext service2.getdate()
                 }
                 binding.id.text = data.id
+
                 binding.author.text = data.author
                 binding.content.text = data.content
             }
