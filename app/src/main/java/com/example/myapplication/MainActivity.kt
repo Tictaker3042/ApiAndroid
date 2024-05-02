@@ -46,17 +46,6 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create()).build()
         val service = retrofit.create(Service::class.java)
         val service2 = retrofit2.create(Service2::class.java)
-        binding.button.setOnClickListener {
-            GlobalScope.launch(Dispatchers.Main) {
-                val data = withContext(Dispatchers.IO) {
-                    return@withContext service.getdate()
-                }
-                binding.id.text = data.id
-                binding.type.text = data.type
-                binding.setup.text = data.setup
-                binding.punchline.text = data.punchline
-            }
-        }
         binding.button2.setOnClickListener {
             GlobalScope.launch(Dispatchers.Main) {
                 val data = withContext(Dispatchers.IO) {
